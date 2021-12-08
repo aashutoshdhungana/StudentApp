@@ -177,7 +177,6 @@ namespace StudentApp.Controllers
                 studentToUpdate.Courses = new List<Course>();
                 return;
             }
-
             var selectedCoursesHS = new HashSet<string>(selectedCourses);
             var studentCourse = new HashSet<Guid>
                 (studentToUpdate.Courses.Select(c => c.CourseId));
@@ -196,8 +195,7 @@ namespace StudentApp.Controllers
                 {
                     if(studentCourse.Contains(course.CourseId))
                     {
-                        var courseToRemove = studentToUpdate.Courses.FirstOrDefault(x => x.CourseId == course.CourseId);
-                        _context.Remove(courseToRemove);
+                        studentToUpdate.Courses.Remove(course);
                     }
                 }
             }
