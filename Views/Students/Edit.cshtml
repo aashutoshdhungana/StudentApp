@@ -10,13 +10,32 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form id = "editForm" asp-action="Edit" onsubmit="return formValidation('editForm')">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="StudentID" />
             <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
-                <span asp-validation-for="FullName" class="text-danger"></span>
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" style="text-transform:capitalize;" class="form-control" />
+                <span id="FirstNameVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" style="text-transform:capitalize;" class="form-control" />
+                <span id="MiddleNameVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" style="text-transform:capitalize;" class="form-control" />
+                <span id="LastNameVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" style="text-transform:lowercase;" class="form-control" />
+                <span id="EmailVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" type="number" class="form-control" />
+                <span id="PhoneNumberVal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -30,18 +49,18 @@
                                 {
                                     if (cnt++ % 3 == 0)
                                     {
-                                        @: </tr><tr>
+                                    @: </tr><tr>
                                     }
                                     @:<td>
                                         <input type="checkbox"
                                                name="selectedCourses"
                                                value="@course.CourseId"
                                                @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) />
-                                               @course.Title
+                                        @course.Title
                                     @:</td>
                                 }
                             }
-                           </tr>
+                        </tr>
                     </table>
                 </div>
             </div>

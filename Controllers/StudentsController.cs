@@ -53,7 +53,7 @@ namespace StudentApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,FullName")] Student student)
+        public async Task<IActionResult> Create([Bind("FirstName, MiddleName, LastName, Email, PhoneNumber")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace StudentApp.Controllers
                 .FirstOrDefaultAsync(s => s.StudentID == id);
 
             if (await TryUpdateModelAsync<Student>(
-                studentToUpdate, "", s => s.FullName))
+                studentToUpdate, "", s => s.FirstName, s => s.MiddleName, s => s.LastName, s => s.Email, s=> s.PhoneNumber))
             {
                 UpdateCourseList(studentToUpdate, selectedCourses);
                 try

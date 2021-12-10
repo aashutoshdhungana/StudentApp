@@ -9,7 +9,14 @@ namespace StudentApp.Models
         [Key]
         public Guid StudentID { get; set; }
         [Required]
-        public string FullName { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
+        [Required]
+        public string Email { get; set; }
         public ICollection<Course> Courses { get; set; }
     }
 }
