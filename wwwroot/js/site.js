@@ -67,3 +67,16 @@ function removeValMessage() {
     }
     return;
 }
+
+function readmore() {
+    let about = document.getElementById("about");
+    let link = document.getElementById("seemore-link");
+    if (about.clientHeight > 200) {
+        about.style.height = '200px';
+        link.innerHTML = 'Read more';
+    }
+    else {
+        about.style.height = 'fit-content';
+        link.innerHTML = 'Show Less';
+    }
+}

@@ -69,3 +69,71 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.background-darkgrey {
+    background-color: #4d636f;
+}
+
+.navbar-container {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+}
+
+.background-lightgrey {
+    background-color: #f5f7f8;
+}
+
+.background-lightdimgrey {
+    background-color: #a5b7c0;
+}
+
+.fill-height {
+    min-height: calc(100vh - 120px);
+}
+
+.main-container {
+    width: 70%;
+    margin: auto;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.footer {
+    line-height: 60px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    background-color: whitesmoke;
+}
+
+.dropdown-content a{
+    display: block;
+    color: black!important;
+}
+.dropdownButton {
+    position: relative;
+}
+
+.dropdownButton:hover .dropdown-content{
+    display: block;
+}
+
+.dropdownButton:hover {
+    background-color: whitesmoke;
+}
+.dropdownButton:hover .text-white {
+    color: black!important;
+}
+
+.height-limited {
+    line-height: 25px;
+    height: 200px;
+    overflow: hidden;
+}
